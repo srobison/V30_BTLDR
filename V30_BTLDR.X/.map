@@ -1,0 +1,128 @@
+MPLINK 5.01, LINKER
+Linker Map File - Created Tue Mar 25 15:35:31 2014
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000000
+                   .org_2       code   0x003e40    program   0x00035e
+.config_8007_PIC16 BOOTLOADER.O       code   0x008007    program   0x000002
+.config_8008_PIC16 BOOTLOADER.O       code   0x008008    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x003e40    0x003fee      
+                            0x008007    0x008008      
+            433 out of 16647 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   AddCrc   0x003ed9    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                 AddCrcB1   0x003eda    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+         AppendDataBuffer   0x003e90    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+            BootInfoBlock   0x003ef1    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+         BootInfoBlockEnd   0x003ef7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+             BootloadMode   0x003e4f    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+     BootloaderBreakCheck   0x003e43    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+           BootloaderInfo   0x003ef7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+          BootloaderStart   0x003e40    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+             CheckCommand   0x003ebd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+               DoAutoBaud   0x003e62    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+         EraseAddressOkay   0x003f4f    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+               EraseFlash   0x003f37    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+          JUMPTABLE_BEGIN   0x003ec3    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+            JUMPTABLE_END   0x003ecd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+     LoadHoldingRegisters   0x003f79    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+           NextEraseBlock   0x003f53    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                    NoETX   0x003e8b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                    NoSTX   0x003e87    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+               ReadEeprom   0x003f93    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+           ReadEepromLoop   0x003f95    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                ReadFlash   0x003eff    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+            ReadFlashWord   0x003f13    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+             ReadHostByte   0x003fd8    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+          ReceiveDataLoop   0x003e83    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+            RetryAutoBaud   0x003e67    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+          SendAcknowledge   0x003fb4    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+              SendCRCWord   0x003fbc    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+             SendChecksum   0x003fb7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                  SendETX   0x003fb8    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+           SendEscapeByte   0x003fc0    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+             SendHostByte   0x003fd0    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+              StartOfLine   0x003e81    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+               StartWrite   0x003fe5    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+             StartWriteB3   0x003fe6    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+              VerifyFlash   0x003f1e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+          VerifyPacketCRC   0x003e94    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+      VerifyPacketCrcLoop   0x003e9e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+       WaitForHostCommand   0x003e77    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+              WaitForRise   0x003ecf    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+          WaitForRiseLoop   0x003ed0    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                    WrDLE   0x003fcd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                   WrNext   0x003fcf    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+         WriteAddressOkay   0x003f76    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+              WriteEeprom   0x003fa4    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+               WriteFlash   0x003f5e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                     WtSR   0x003ed6    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+          BootloaderStart   0x003e40    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+     BootloaderBreakCheck   0x003e43    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+             BootloadMode   0x003e4f    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+               DoAutoBaud   0x003e62    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+            RetryAutoBaud   0x003e67    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+       WaitForHostCommand   0x003e77    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+              StartOfLine   0x003e81    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+          ReceiveDataLoop   0x003e83    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                    NoSTX   0x003e87    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                    NoETX   0x003e8b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+         AppendDataBuffer   0x003e90    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+          VerifyPacketCRC   0x003e94    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+      VerifyPacketCrcLoop   0x003e9e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+             CheckCommand   0x003ebd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+          JUMPTABLE_BEGIN   0x003ec3    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+            JUMPTABLE_END   0x003ecd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+              WaitForRise   0x003ecf    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+          WaitForRiseLoop   0x003ed0    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                     WtSR   0x003ed6    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                   AddCrc   0x003ed9    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                 AddCrcB1   0x003eda    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+            BootInfoBlock   0x003ef1    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+         BootInfoBlockEnd   0x003ef7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+           BootloaderInfo   0x003ef7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                ReadFlash   0x003eff    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+            ReadFlashWord   0x003f13    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+              VerifyFlash   0x003f1e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+               EraseFlash   0x003f37    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+         EraseAddressOkay   0x003f4f    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+           NextEraseBlock   0x003f53    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+               WriteFlash   0x003f5e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+         WriteAddressOkay   0x003f76    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+     LoadHoldingRegisters   0x003f79    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+               ReadEeprom   0x003f93    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+           ReadEepromLoop   0x003f95    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+              WriteEeprom   0x003fa4    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+          SendAcknowledge   0x003fb4    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+             SendChecksum   0x003fb7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                  SendETX   0x003fb8    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+              SendCRCWord   0x003fbc    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+           SendEscapeByte   0x003fc0    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                    WrDLE   0x003fcd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+                   WrNext   0x003fcf    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+             SendHostByte   0x003fd0    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+             ReadHostByte   0x003fd8    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+               StartWrite   0x003fe5    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+             StartWriteB3   0x003fe6    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\PIC16 Bootloader.asm
+
+
