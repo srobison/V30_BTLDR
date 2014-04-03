@@ -163,6 +163,8 @@ BootloaderBreakCheck:
 
     btfsc   BTN0PORT, BTN0PIN           ; B0 BREAK found, wait for RXD to go IDLE
     goto    $-1
+;    clrwdt
+;    goto    $-2
 #else ; BOOTLOADER_ADDRESS == 0 ****************************************************************
     ORG     0
 BootloaderStart:

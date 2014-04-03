@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED="../PIC16 Bootloader.asm"
+SOURCEFILES_QUOTED_IF_SPACED=../V30_BTLDR.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED="${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o"
-POSSIBLE_DEPFILES="${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o.d"
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1472/V30_BTLDR.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1472/V30_BTLDR.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1472/PIC16\ Bootloader.o
+OBJECTFILES=${OBJECTDIR}/_ext/1472/V30_BTLDR.o
 
 # Source Files
-SOURCEFILES=../PIC16 Bootloader.asm
+SOURCEFILES=../V30_BTLDR.asm
 
 
 CFLAGS=
@@ -79,30 +79,30 @@ MP_LINKER_DEBUG_OPTION=
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/1472/PIC16\ Bootloader.o: ../PIC16\ Bootloader.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_ext/1472/V30_BTLDR.o: ../V30_BTLDR.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/_ext/1472 
-	@${RM} ${OBJECTDIR}/_ext/1472/PIC16\ Bootloader.o.d 
-	@${RM} "${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o" 
-	@${FIXDEPS} dummy.d -e "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../PIC16 Bootloader.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_ICD3=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../PIC16 Bootloader.asm\" 
-	@${MV}  "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../PIC16 Bootloader".O "${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o"
-	@${MV}  "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../PIC16 Bootloader".ERR "${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o".err
-	@${MV}  "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../PIC16 Bootloader".LST "${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o".lst
-	@${RM}  "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../PIC16 Bootloader".HEX 
-	@${DEP_GEN} -d "${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o"
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/_ext/1472/V30_BTLDR.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/V30_BTLDR.o 
+	@${FIXDEPS} dummy.d -e "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_ICD3=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.asm\" 
+	@${MV}  W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.O ${OBJECTDIR}/_ext/1472/V30_BTLDR.o
+	@${MV}  W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.ERR ${OBJECTDIR}/_ext/1472/V30_BTLDR.o.err
+	@${MV}  W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.LST ${OBJECTDIR}/_ext/1472/V30_BTLDR.o.lst
+	@${RM}  W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.HEX 
+	@${DEP_GEN} -d "${OBJECTDIR}/_ext/1472/V30_BTLDR.o"
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/V30_BTLDR.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 else
-${OBJECTDIR}/_ext/1472/PIC16\ Bootloader.o: ../PIC16\ Bootloader.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_ext/1472/V30_BTLDR.o: ../V30_BTLDR.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/_ext/1472 
-	@${RM} ${OBJECTDIR}/_ext/1472/PIC16\ Bootloader.o.d 
-	@${RM} "${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o" 
-	@${FIXDEPS} dummy.d -e "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../PIC16 Bootloader.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../PIC16 Bootloader.asm\" 
-	@${MV}  "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../PIC16 Bootloader".O "${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o"
-	@${MV}  "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../PIC16 Bootloader".ERR "${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o".err
-	@${MV}  "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../PIC16 Bootloader".LST "${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o".lst
-	@${RM}  "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../PIC16 Bootloader".HEX 
-	@${DEP_GEN} -d "${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o"
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/PIC16 Bootloader.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/_ext/1472/V30_BTLDR.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1472/V30_BTLDR.o 
+	@${FIXDEPS} dummy.d -e "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.asm\" 
+	@${MV}  W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.O ${OBJECTDIR}/_ext/1472/V30_BTLDR.o
+	@${MV}  W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.ERR ${OBJECTDIR}/_ext/1472/V30_BTLDR.o.err
+	@${MV}  W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.LST ${OBJECTDIR}/_ext/1472/V30_BTLDR.o.lst
+	@${RM}  W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.HEX 
+	@${DEP_GEN} -d "${OBJECTDIR}/_ext/1472/V30_BTLDR.o"
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1472/V30_BTLDR.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 
