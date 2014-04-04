@@ -161,7 +161,9 @@ BootloaderBreakCheck:
     btfss   BTN0PORT, BTN0PIN           ; B0
     goto    AppVector               ; no BREAK state, attempt to start application
 WaitBootloaderBreakCheck:
-    clrwdt
+;    clrwdt                         ; let the watchdog timer expire here if user ends up here inadvertently -> we have to catch bootloader within 2/8? seconds of reset
+    bsf     LEDPORT, LEDPIN
+    bcf     LIGHTPORT, LIGHTPIN
     btfsc   BTN0PORT, BTN0PIN           ; B0 BREAK found, wait for RXD to go IDLE
 ;    goto    $-1
     goto    WaitBootloaderBreakCheck
@@ -283,6 +285,7 @@ BootloadMode:
 
 #if BOOTLOADER_ADDRESS != 0
     DigitalInput
+    DigitalOutput
 #endif
 
 #ifdef USE_MAX_INTOSC
@@ -531,7 +534,9 @@ WaitForRiseLoop:                    ; B0
     btfsc   BTN1PORT, BTN1PIN       ; quit bootloader if btn1 pressed
     goto    AppVector
 
-    clrwdt                          ;   XXX
+;    clrwdt                          ;   XXX this let's the watchdog timer break from the bootloader if inadvertently entered by user
+    bsf     LEDPORT, LEDPIN
+    bcf     LIGHTPORT, LIGHTPIN
 
     btfsc   RXPORT, RXPIN           ; B0 Wait for a falling edge
     goto    WaitForRiseLoop         ; B0

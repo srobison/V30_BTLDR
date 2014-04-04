@@ -125,6 +125,20 @@
             #define BTN1PIN   RD5
     #endif
 #endif
+#ifndef LEDPORT
+    #ifdef PORTD
+            ; LED2 on pin RC2
+            #define LEDPORT  PORTC
+            #define LEDPIN   RC2
+    #endif
+#endif
+#ifndef LIGHTPORT
+    #ifdef PORTB
+            ; flashlight on pin RB5
+            #define LIGHTPORT  PORTB
+            #define LIGHTPIN   RB5
+    #endif
+#endif
 
 DigitalInput macro
 #ifdef ANSELA
@@ -147,19 +161,40 @@ DigitalInput macro
 #ifdef ANSELD
     #if BTN0PORT == PORTD		; RD4
 	banksel ANSELD
-	bcf	ANSELD, BTN0PIN	; set BTN0 pin to digital input
+	bcf	ANSELD, BTN0PIN	; set BTN0 pin to digital input (not analog)
 
 	BXtoB0
     #endif
 
     #if BTN1PORT == PORTD		; RD5
 	banksel ANSELD
-	bcf	ANSELD, BTN1PIN	; set BTN1 pin to digital input
+	bcf	ANSELD, BTN1PIN	; set BTN1 pin to digital input (not analog)
 
 	BXtoB0
+    #endif    
+#endif
+    endm
+
+DigitalOutput macro
+#ifdef ANSELB
+    #if LIGHTPORT == PORTB
+    	banksel ANSELB
+    	bcf	ANSELB, LIGHTPIN	; set flashlight pin to digital output (not analog)
+        banksel TRISB
+        bcf	TRISB, LIGHTPIN	; set RB5 pin to digital output (not analog)
+
+        BXtoB0
     #endif
 #endif
-    endm        
+    #if LEDPORT == PORTC		; RC2
+    ;	banksel ANSELC
+    ;	bcf	ANSELC, LEDPIN	; set LED pin to digital output (not analog)
+        banksel TRISC
+        bcf TRISC, LEDPIN           ; B1 Setup LED pin for output
+
+        BXtoB0
+    #endif
+    endm
 
 #if BOOTLOADERSIZE < ERASE_FLASH_BLOCKSIZE
     ; This device has a large Erase FLASH Block Size, so we need to reserve a full Erase Block
