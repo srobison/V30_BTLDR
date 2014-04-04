@@ -1,5 +1,5 @@
 MPLINK 5.01, LINKER
-Linker Map File - Created Thu Apr 03 17:59:19 2014
+Linker Map File - Created Fri Apr 04 14:08:43 2014
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -62,6 +62,7 @@ Linker Map File - Created Thu Apr 03 17:59:19 2014
               VerifyFlash   0x003f23    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
           VerifyPacketCRC   0x003e98    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
       VerifyPacketCrcLoop   0x003ea2    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+ WaitBootloaderBreakCheck   0x003e4d    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
        WaitForHostCommand   0x003e7b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
               WaitForRise   0x003ed3    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
           WaitForRiseLoop   0x003ed4    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
@@ -79,6 +80,7 @@ Linker Map File - Created Thu Apr 03 17:59:19 2014
                 ---------  ---------  ---------  --------- ---------                
           BootloaderStart   0x003e40    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
      BootloaderBreakCheck   0x003e43    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+ WaitBootloaderBreakCheck   0x003e4d    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
              BootloadMode   0x003e50    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
                DoAutoBaud   0x003e66    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
             RetryAutoBaud   0x003e6b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm

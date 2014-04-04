@@ -115,7 +115,7 @@ W_TEMP		        equ	0x7F
 ; *****************************************************************************
 
 
-#if BOOTLOADER_ADDRESS != 0
+;#if BOOTLOADER_ADDRESS != 0
     ORG     0
 
     ; The following GOTO is not strictly necessary, but may startup faster
@@ -160,76 +160,76 @@ BootloaderBreakCheck:
 ;#endif
     btfss   BTN0PORT, BTN0PIN           ; B0
     goto    AppVector               ; no BREAK state, attempt to start application
-
+WaitBootloaderBreakCheck:
+    clrwdt
     btfsc   BTN0PORT, BTN0PIN           ; B0 BREAK found, wait for RXD to go IDLE
 ;    goto    $-1
-    clrwdt
-    goto    $-2
-#else ; BOOTLOADER_ADDRESS == 0 ****************************************************************
-    ORG     0
-BootloaderStart:
-    nop                             ; required to allow debug executive startup when running under ICD
-    BXtoB0                          ; Bx -> B0
-    goto    BootloaderBreakCheck
-
-    ORG     0x0004
-InterruptVector:
-#ifndef BSR
-	movwf	W_TEMP                  ; Bx save W register temporarily
-	swapf	PCLATH, W				; Bx save PCLATH register
-	movwf	PCLATH_TEMP				; Bx (SWAPF used to avoid damaging STATUS register)
-#endif
-    movlw   high(AppIntVector)      ; Bx set PCLATH for making a long jump to the AppIntVector address
-    movwf   PCLATH                  ; Bx
-    goto    AppIntVector            ; Bx jump to remapped application interrupt vector.
-
-BootloaderBreakCheck:
-    DigitalInput                    ; Make sure RX pin is not analog input
-    
-#ifdef INVERT_UART
-    btfsc   RXPORT, RXPIN           ; B0 
-    goto    WaitForRxIdle           ; BREAK detected, startup in Bootloader mode
-#else
-    btfss   RXPORT, RXPIN           ; B0  
-    goto    WaitForRxIdle           ; BREAK detected, startup in Bootloader mode
-#endif
-
-    ; Attempt to startup in Application mode.
-    ; Read instruction at the application reset vector location. 
-    ; If we read 0x3FFF, assume that the application firmware has
-    ; not been programmed yet, so don't try going into application mode.
-    banksel EEADR                   ; Bx -> B2
-    movlw   low(AppVector)          ; Bx load address of application reset vector
-    movwf   EEADR                   ; B2 
-    movlw   high(AppVector)
-    movwf   EEADRH                  ; B2
-    movwf   PCLATH                  ; Bx
-    call    ReadFlashWord           ; Bx -> B0
-
-    addlw   .1
-    btfss   STATUS, Z               ; Bx if the lower byte != 0xFF, 
-    goto    AppVector               ; Bx run application.
-
-    movlw   0x3F
-    xorwf   FSR, w                  ; Bx if the lower byte == 0xFF but upper byte != 0x3F,
-    btfss   STATUS, Z               ; Bx run application
-    goto    AppVector
-
-    movlw   high(BootloadMode)
-    movwf   PCLATH                  ; Bx
-
-    ; otherwise, assume application firmware is not loaded, 
-    ; fall through to bootloader mode...
-#ifdef INVERT_UART
-WaitForRxIdle:
-    btfsc   RXPORT, RXPIN           ; B0 BREAK found, wait for RXD to go IDLE
-    goto    WaitForRxIdle
-#else
-WaitForRxIdle:
-    btfss   RXPORT, RXPIN           ; B0 BREAK found, wait for RXD to go IDLE
-    goto    WaitForRxIdle
-#endif
-#endif ; end BOOTLOADER_ADDRESS == 0 ******************************************
+    goto    WaitBootloaderBreakCheck
+;#else ; BOOTLOADER_ADDRESS == 0 ****************************************************************
+;    ORG     0
+;BootloaderStart:
+;    nop                             ; required to allow debug executive startup when running under ICD
+;    BXtoB0                          ; Bx -> B0
+;    goto    BootloaderBreakCheck
+;
+;    ORG     0x0004
+;InterruptVector:
+;#ifndef BSR
+;	movwf	W_TEMP                  ; Bx save W register temporarily
+;	swapf	PCLATH, W				; Bx save PCLATH register
+;	movwf	PCLATH_TEMP				; Bx (SWAPF used to avoid damaging STATUS register)
+;#endif
+;    movlw   high(AppIntVector)      ; Bx set PCLATH for making a long jump to the AppIntVector address
+;    movwf   PCLATH                  ; Bx
+;    goto    AppIntVector            ; Bx jump to remapped application interrupt vector.
+;
+;BootloaderBreakCheck:
+;    DigitalInput                    ; Make sure RX pin is not analog input
+;
+;#ifdef INVERT_UART
+;    btfsc   RXPORT, RXPIN           ; B0
+;    goto    WaitForRxIdle           ; BREAK detected, startup in Bootloader mode
+;#else
+;    btfss   RXPORT, RXPIN           ; B0
+;    goto    WaitForRxIdle           ; BREAK detected, startup in Bootloader mode
+;#endif
+;
+;    ; Attempt to startup in Application mode.
+;    ; Read instruction at the application reset vector location.
+;    ; If we read 0x3FFF, assume that the application firmware has
+;    ; not been programmed yet, so don't try going into application mode.
+;    banksel EEADR                   ; Bx -> B2
+;    movlw   low(AppVector)          ; Bx load address of application reset vector
+;    movwf   EEADR                   ; B2
+;    movlw   high(AppVector)
+;    movwf   EEADRH                  ; B2
+;    movwf   PCLATH                  ; Bx
+;    call    ReadFlashWord           ; Bx -> B0
+;
+;    addlw   .1
+;    btfss   STATUS, Z               ; Bx if the lower byte != 0xFF,
+;    goto    AppVector               ; Bx run application.
+;
+;    movlw   0x3F
+;    xorwf   FSR, w                  ; Bx if the lower byte == 0xFF but upper byte != 0x3F,
+;    btfss   STATUS, Z               ; Bx run application
+;    goto    AppVector
+;
+;    movlw   high(BootloadMode)
+;    movwf   PCLATH                  ; Bx
+;
+;    ; otherwise, assume application firmware is not loaded,
+;    ; fall through to bootloader mode...
+;#ifdef INVERT_UART
+;WaitForRxIdle:
+;    btfsc   RXPORT, RXPIN           ; B0 BREAK found, wait for RXD to go IDLE
+;    goto    WaitForRxIdle
+;#else
+;WaitForRxIdle:
+;    btfss   RXPORT, RXPIN           ; B0 BREAK found, wait for RXD to go IDLE
+;    goto    WaitForRxIdle
+;#endif
+;#endif ; end BOOTLOADER_ADDRESS == 0 ******************************************
 
 BootloadMode:
 #ifdef BRG16
