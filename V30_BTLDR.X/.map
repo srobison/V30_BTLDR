@@ -1,12 +1,12 @@
 MPLINK 5.01, LINKER
-Linker Map File - Created Thu Apr 03 14:42:12 2014
+Linker Map File - Created Thu Apr 03 17:59:19 2014
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
                    .org_0       code   0x000000    program   0x000000
                    .org_1       code   0x000000    program   0x000000
-                   .org_2       code   0x003e40    program   0x00035e
+                   .org_2       code   0x003e40    program   0x000368
  .config_8007_V30_BTLDR.O       code   0x008007    program   0x000002
  .config_8008_V30_BTLDR.O       code   0x008008    program   0x000002
 
@@ -15,62 +15,62 @@ Linker Map File - Created Thu Apr 03 14:42:12 2014
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x003e40    0x003fee      
+                            0x003e40    0x003ff3      
                             0x008007    0x008008      
-            433 out of 16647 program addresses used, program memory utilization is 2%
+            438 out of 16647 program addresses used, program memory utilization is 2%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                   AddCrc   0x003ed9    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                 AddCrcB1   0x003eda    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-         AppendDataBuffer   0x003e90    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-            BootInfoBlock   0x003ef1    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-         BootInfoBlockEnd   0x003ef7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-             BootloadMode   0x003e4f    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                   AddCrc   0x003ede    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                 AddCrcB1   0x003edf    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+         AppendDataBuffer   0x003e94    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+            BootInfoBlock   0x003ef6    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+         BootInfoBlockEnd   0x003efc    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+             BootloadMode   0x003e50    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
      BootloaderBreakCheck   0x003e43    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-           BootloaderInfo   0x003ef7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+           BootloaderInfo   0x003efc    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
           BootloaderStart   0x003e40    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-             CheckCommand   0x003ebd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-               DoAutoBaud   0x003e62    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-         EraseAddressOkay   0x003f4f    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-               EraseFlash   0x003f37    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-          JUMPTABLE_BEGIN   0x003ec3    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-            JUMPTABLE_END   0x003ecd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-     LoadHoldingRegisters   0x003f79    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-           NextEraseBlock   0x003f53    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                    NoETX   0x003e8b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                    NoSTX   0x003e87    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-               ReadEeprom   0x003f93    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-           ReadEepromLoop   0x003f95    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                ReadFlash   0x003eff    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-            ReadFlashWord   0x003f13    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-             ReadHostByte   0x003fd8    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-          ReceiveDataLoop   0x003e83    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-            RetryAutoBaud   0x003e67    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-          SendAcknowledge   0x003fb4    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-              SendCRCWord   0x003fbc    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-             SendChecksum   0x003fb7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                  SendETX   0x003fb8    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-           SendEscapeByte   0x003fc0    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-             SendHostByte   0x003fd0    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-              StartOfLine   0x003e81    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-               StartWrite   0x003fe5    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-             StartWriteB3   0x003fe6    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-              VerifyFlash   0x003f1e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-          VerifyPacketCRC   0x003e94    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-      VerifyPacketCrcLoop   0x003e9e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-       WaitForHostCommand   0x003e77    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-              WaitForRise   0x003ecf    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-          WaitForRiseLoop   0x003ed0    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                    WrDLE   0x003fcd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                   WrNext   0x003fcf    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-         WriteAddressOkay   0x003f76    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-              WriteEeprom   0x003fa4    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-               WriteFlash   0x003f5e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                     WtSR   0x003ed6    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+             CheckCommand   0x003ec1    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+               DoAutoBaud   0x003e66    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+         EraseAddressOkay   0x003f54    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+               EraseFlash   0x003f3c    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+          JUMPTABLE_BEGIN   0x003ec7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+            JUMPTABLE_END   0x003ed1    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+     LoadHoldingRegisters   0x003f7e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+           NextEraseBlock   0x003f58    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                    NoETX   0x003e8f    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                    NoSTX   0x003e8b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+               ReadEeprom   0x003f98    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+           ReadEepromLoop   0x003f9a    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                ReadFlash   0x003f04    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+            ReadFlashWord   0x003f18    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+             ReadHostByte   0x003fdd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+          ReceiveDataLoop   0x003e87    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+            RetryAutoBaud   0x003e6b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+          SendAcknowledge   0x003fb9    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+              SendCRCWord   0x003fc1    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+             SendChecksum   0x003fbc    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                  SendETX   0x003fbd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+           SendEscapeByte   0x003fc5    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+             SendHostByte   0x003fd5    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+              StartOfLine   0x003e85    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+               StartWrite   0x003fea    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+             StartWriteB3   0x003feb    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+              VerifyFlash   0x003f23    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+          VerifyPacketCRC   0x003e98    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+      VerifyPacketCrcLoop   0x003ea2    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+       WaitForHostCommand   0x003e7b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+              WaitForRise   0x003ed3    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+          WaitForRiseLoop   0x003ed4    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                    WrDLE   0x003fd2    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                   WrNext   0x003fd4    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+         WriteAddressOkay   0x003f7b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+              WriteEeprom   0x003fa9    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+               WriteFlash   0x003f63    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                     WtSR   0x003edb    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
 
 
 
@@ -79,50 +79,50 @@ Linker Map File - Created Thu Apr 03 14:42:12 2014
                 ---------  ---------  ---------  --------- ---------                
           BootloaderStart   0x003e40    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
      BootloaderBreakCheck   0x003e43    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-             BootloadMode   0x003e4f    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-               DoAutoBaud   0x003e62    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-            RetryAutoBaud   0x003e67    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-       WaitForHostCommand   0x003e77    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-              StartOfLine   0x003e81    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-          ReceiveDataLoop   0x003e83    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                    NoSTX   0x003e87    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                    NoETX   0x003e8b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-         AppendDataBuffer   0x003e90    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-          VerifyPacketCRC   0x003e94    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-      VerifyPacketCrcLoop   0x003e9e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-             CheckCommand   0x003ebd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-          JUMPTABLE_BEGIN   0x003ec3    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-            JUMPTABLE_END   0x003ecd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-              WaitForRise   0x003ecf    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-          WaitForRiseLoop   0x003ed0    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                     WtSR   0x003ed6    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                   AddCrc   0x003ed9    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                 AddCrcB1   0x003eda    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-            BootInfoBlock   0x003ef1    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-         BootInfoBlockEnd   0x003ef7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-           BootloaderInfo   0x003ef7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                ReadFlash   0x003eff    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-            ReadFlashWord   0x003f13    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-              VerifyFlash   0x003f1e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-               EraseFlash   0x003f37    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-         EraseAddressOkay   0x003f4f    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-           NextEraseBlock   0x003f53    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-               WriteFlash   0x003f5e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-         WriteAddressOkay   0x003f76    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-     LoadHoldingRegisters   0x003f79    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-               ReadEeprom   0x003f93    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-           ReadEepromLoop   0x003f95    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-              WriteEeprom   0x003fa4    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-          SendAcknowledge   0x003fb4    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-             SendChecksum   0x003fb7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                  SendETX   0x003fb8    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-              SendCRCWord   0x003fbc    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-           SendEscapeByte   0x003fc0    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                    WrDLE   0x003fcd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-                   WrNext   0x003fcf    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-             SendHostByte   0x003fd0    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-             ReadHostByte   0x003fd8    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-               StartWrite   0x003fe5    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
-             StartWriteB3   0x003fe6    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+             BootloadMode   0x003e50    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+               DoAutoBaud   0x003e66    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+            RetryAutoBaud   0x003e6b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+       WaitForHostCommand   0x003e7b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+              StartOfLine   0x003e85    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+          ReceiveDataLoop   0x003e87    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                    NoSTX   0x003e8b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                    NoETX   0x003e8f    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+         AppendDataBuffer   0x003e94    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+          VerifyPacketCRC   0x003e98    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+      VerifyPacketCrcLoop   0x003ea2    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+             CheckCommand   0x003ec1    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+          JUMPTABLE_BEGIN   0x003ec7    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+            JUMPTABLE_END   0x003ed1    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+              WaitForRise   0x003ed3    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+          WaitForRiseLoop   0x003ed4    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                     WtSR   0x003edb    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                   AddCrc   0x003ede    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                 AddCrcB1   0x003edf    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+            BootInfoBlock   0x003ef6    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+         BootInfoBlockEnd   0x003efc    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+           BootloaderInfo   0x003efc    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                ReadFlash   0x003f04    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+            ReadFlashWord   0x003f18    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+              VerifyFlash   0x003f23    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+               EraseFlash   0x003f3c    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+         EraseAddressOkay   0x003f54    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+           NextEraseBlock   0x003f58    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+               WriteFlash   0x003f63    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+         WriteAddressOkay   0x003f7b    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+     LoadHoldingRegisters   0x003f7e    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+               ReadEeprom   0x003f98    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+           ReadEepromLoop   0x003f9a    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+              WriteEeprom   0x003fa9    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+          SendAcknowledge   0x003fb9    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+             SendChecksum   0x003fbc    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                  SendETX   0x003fbd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+              SendCRCWord   0x003fc1    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+           SendEscapeByte   0x003fc5    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                    WrDLE   0x003fd2    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+                   WrNext   0x003fd4    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+             SendHostByte   0x003fd5    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+             ReadHostByte   0x003fdd    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+               StartWrite   0x003fea    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
+             StartWriteB3   0x003feb    program     static W:\_fw\fw_projects\V30_BTLDR\V30_BTLDR.X\..\V30_BTLDR.asm
 
 

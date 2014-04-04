@@ -77,7 +77,7 @@
 ; *****************************************************************************
 ; CONFIG1
 ; __config 0xFFE4
- __CONFIG _CONFIG1, _FOSC_INTOSC & _WDTE_OFF & _PWRTE_OFF & _MCLRE_ON & _CP_OFF & _CPD_OFF & _BOREN_ON & _CLKOUTEN_OFF & _IESO_ON & _FCMEN_ON
+ __CONFIG _CONFIG1, _FOSC_INTOSC & _WDTE_ON & _PWRTE_OFF & _MCLRE_ON & _CP_OFF & _CPD_OFF & _BOREN_ON & _CLKOUTEN_OFF & _IESO_ON & _FCMEN_ON
 ; CONFIG2
 ; __config 0xDFFF
  __CONFIG _CONFIG2, _WRT_OFF & _VCAPEN_OFF & _PLLEN_ON & _STVREN_ON & _BORV_LO & _LVP_OFF
@@ -162,9 +162,9 @@ BootloaderBreakCheck:
     goto    AppVector               ; no BREAK state, attempt to start application
 
     btfsc   BTN0PORT, BTN0PIN           ; B0 BREAK found, wait for RXD to go IDLE
-    goto    $-1
-;    clrwdt
-;    goto    $-2
+;    goto    $-1
+    clrwdt
+    goto    $-2
 #else ; BOOTLOADER_ADDRESS == 0 ****************************************************************
     ORG     0
 BootloaderStart:
@@ -256,6 +256,10 @@ BootloadMode:
     movwf   TXSTA                   ; B1
 #endif
 
+    B0toB1                          ; B0 -> B1
+    movlw   b'00011011'             ; WDTprescaler set to 8s
+    movwf   WDTCON                  ; B1
+
 #ifndef BRG16
     clrwdt                          ; required to avoid reset when modifying TMR0 prescaler assignment
     movlw   b'00000011'             ; 1:16 prescaler for Timer 0, used for auto-baud calculation
@@ -322,6 +326,7 @@ DoAutoBaud:
     banksel TMR1H
 #endif
 RetryAutoBaud:
+;    clrwdt                          ;   XXX
 #ifdef BRG16
     clrf    TMR1H                   ; B0 reset timer count value
     clrf    TMR1L                   ; B0
@@ -385,6 +390,9 @@ WaitForHostCommand:                 ; B0/B1
 #else
     BXtoB0                          ; B1 -> B0
 #endif
+
+;    clrwdt                          ;   XXX
+
     bsf     RCSTA, CREN             ; B0 start receiving
 
     lfsr    COMMAND                 ; Bx Point to the buffer
@@ -396,10 +404,16 @@ WaitForHostCommand:                 ; B0/B1
 ; *****************************************************************************
 ; Read and parse packet data.
 StartOfLine:
+
+;    clrwdt                          ;   XXX
+
     movlw   STX                     ; send back start of response
     call    SendHostByte            ; B0/B1 -> B1
 
 ReceiveDataLoop:
+
+;    clrwdt                          ;   XXX
+
     call    ReadHostByte            ; Bx -> B0 Get the data
     xorlw   STX                     ; Check for an unexpected STX
     bz      StartOfLine             ; unexpected STX: abort packet and start over.
@@ -516,6 +530,8 @@ WaitForRiseLoop:                    ; B0
 
     btfsc   BTN1PORT, BTN1PIN       ; quit bootloader if btn1 pressed
     goto    AppVector
+
+    clrwdt                          ;   XXX
 
     btfsc   RXPORT, RXPIN           ; B0 Wait for a falling edge
     goto    WaitForRiseLoop         ; B0
