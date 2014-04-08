@@ -28,6 +28,8 @@
 ;#define INVERT_UART             ; If you don't have an RS232 transceiver, you might want this option
 ;#define USE_ALTERNATE_PINS      ; Sets APFCON<RXDTSEL> and APFCON<TXCKSEL> for alternate UART pin usage
 
+#define V04_HW
+
 ; Most devices have the UART on TX/RC6 and RX/RC7 pins (default unless explicitly specified here).
 ;#define RXPORT  PORTC
 ;#define RXPIN   RC7
