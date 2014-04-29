@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration device="PIC16F1939" mcc_version="v1.1">
+    <managers>
+        <manager generated="false" name="Pin Manager">
+            <setting name="CCP2SEL" option="RC1"/>
+            <setting name="SRNQSEL" option="RA5"/>
+            <setting name="C2OUTSEL" option="RA5"/>
+            <setting name="P2BSEL" option="RC0"/>
+            <setting name="SSSEL" option="RA5"/>
+            <setting name="T1GSEL" option="RB5"/>
+            <setting name="CCP3SEL" option="RE0"/>
+            <setting name="package" option="PDIP40"/>
+        </manager>
+        <manager generated="false" name="System">
+            <initializer comment="" name="InitializerDefault">
+                <setting name="SPLLEN" option="disabled"/>
+                <setting name="SCS" option="FOSC"/>
+                <setting name="IRCF" option="500KHz_MF"/>
+                <setting name="OSTS" option="intosc"/>
+                <setting name="HFIOFR" option="disabled"/>
+                <setting name="HFIOFS" option="not0.5percent_acc"/>
+                <setting name="PLLR" option="disabled"/>
+                <setting name="MFIOFR" option="disabled"/>
+                <setting name="T1OSCR" option="disabled"/>
+                <setting name="LFIOFR" option="disabled"/>
+                <setting name="HFIOFL" option="not2percent_acc"/>
+                <setting name="TUN" option="0x0"/>
+                <additionalSetting name="pllMultiplier" option=""/>
+                <additionalSetting name="extclk" option="1.0 MHz"/>
+            </initializer>
+            <setting name="FOSC" option="INTOSC"/>
+            <setting name="WDTE" option="OFF"/>
+            <setting name="PWRTE" option="OFF"/>
+            <setting name="MCLRE" option="ON"/>
+            <setting name="CP" option="OFF"/>
+            <setting name="CPD" option="OFF"/>
+            <setting name="BOREN" option="ON"/>
+            <setting name="CLKOUTEN" option="OFF"/>
+            <setting name="IESO" option="ON"/>
+            <setting name="FCMEN" option="ON"/>
+            <setting name="WRT" option="OFF"/>
+            <setting name="VCAPEN" option="OFF"/>
+            <setting name="PLLEN" option="ON"/>
+            <setting name="STVREN" option="ON"/>
+            <setting name="BORV" option="LO"/>
+            <setting name="LVP" option="OFF"/>
+        </manager>
+    </managers>
+</configuration>
