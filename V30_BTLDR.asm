@@ -77,7 +77,7 @@
 ; *****************************************************************************
 ; CONFIG1
 ; __config 0xFFE4
- __CONFIG _CONFIG1, _FOSC_INTOSC & _WDTE_ON & _PWRTE_OFF & _MCLRE_ON & _CP_OFF & _CPD_OFF & _BOREN_ON & _CLKOUTEN_OFF & _IESO_ON & _FCMEN_ON
+ __CONFIG _CONFIG1, _FOSC_INTOSC & _WDTE_ON & _PWRTE_OFF & _MCLRE_ON & _CP_OFF & _CPD_OFF & _BOREN_ON & _CLKOUTEN_OFF & _IESO_ON & _FCMEN_OFF
 ; CONFIG2
 ; __config 0xDFFF
  __CONFIG _CONFIG2, _WRT_OFF & _VCAPEN_OFF & _PLLEN_ON & _STVREN_ON & _BORV_LO & _LVP_OFF
@@ -159,9 +159,9 @@ BootloaderBreakCheck:
 ;    goto    $-1
 ;#endif
 #ifdef V04_HW
-    btfsc   BTN0PORT, BTN0PIN           ; B0
+    btfsc   BTN1PORT, BTN1PIN           ; B0
 #else
-    btfss   BTN0PORT, BTN0PIN           ; B0
+    btfss   BTN1PORT, BTN1PIN           ; B0
 #endif
     goto    AppVector               ; no BREAK state, attempt to start application
 WaitBootloaderBreakCheck:
@@ -169,9 +169,9 @@ WaitBootloaderBreakCheck:
     bsf     LEDPORT, LEDPIN
     bcf     LIGHTPORT, LIGHTPIN
 #ifdef V04_HW
-    btfss   BTN0PORT, BTN0PIN           ; B0 BREAK found, wait for RXD to go IDLE
+    btfss   BTN1PORT, BTN1PIN           ; B0 BREAK found, wait for RXD to go IDLE
 #else
-    btfsc   BTN0PORT, BTN0PIN           ; B0 BREAK found, wait for RXD to go IDLE
+    btfsc   BTN1PORT, BTN1PIN           ; B0 BREAK found, wait for RXD to go IDLE
 #endif
 ;    goto    $-1
     goto    WaitBootloaderBreakCheck
@@ -540,9 +540,9 @@ WaitForRiseLoop:                    ; B0
 #endif
 
 #ifdef V04_HW
-    btfss   BTN1PORT, BTN1PIN       ; quit bootloader if btn1 pressed
+    btfss   BTN0PORT, BTN0PIN       ; quit bootloader if btn1 pressed
 #else
-    btfsc   BTN1PORT, BTN1PIN       ; quit bootloader if btn1 pressed
+    btfsc   BTN0PORT, BTN0PIN       ; quit bootloader if btn1 pressed
 #endif
     goto    AppVector
 
@@ -975,9 +975,9 @@ ReadHostByte:                       ; Bx -> B0
     BXtoB0                          ; Bx -> B0
     clrwdt
 #ifdef V04_HW
-    btfss   BTN1PORT, BTN1PIN       ; quit bootloader if btn1 pressed
+    btfss   BTN0PORT, BTN0PIN       ; quit bootloader if btn1 pressed
 #else
-    btfsc   BTN1PORT, BTN1PIN       ; quit bootloader if btn1 pressed
+    btfsc   BTN0PORT, BTN0PIN       ; quit bootloader if btn1 pressed
 #endif
     goto    AppVector
 
