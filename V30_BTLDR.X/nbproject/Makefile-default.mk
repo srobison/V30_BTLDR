@@ -72,7 +72,10 @@ LDLIBSOPTIONS=
 FIXDEPS=fixDeps
 
 .build-conf:  ${BUILD_SUBPROJECTS}
-	${MAKE} ${MAKE_OPTIONS} -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/V30_BTLDR.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+ifneq ($(INFORMATION_MESSAGE), )
+	@echo $(INFORMATION_MESSAGE)
+endif
+	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/V30_BTLDR.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=16f1939
 MP_LINKER_DEBUG_OPTION= 
@@ -80,7 +83,7 @@ MP_LINKER_DEBUG_OPTION=
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 ${OBJECTDIR}/_ext/1472/V30_BTLDR.o: ../V30_BTLDR.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1472 
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
 	@${RM} ${OBJECTDIR}/_ext/1472/V30_BTLDR.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1472/V30_BTLDR.o 
 	@${FIXDEPS} dummy.d -e "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_ICD3=1 -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.asm\" 
@@ -93,7 +96,7 @@ ${OBJECTDIR}/_ext/1472/V30_BTLDR.o: ../V30_BTLDR.asm  nbproject/Makefile-${CND_C
 	
 else
 ${OBJECTDIR}/_ext/1472/V30_BTLDR.o: ../V30_BTLDR.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/1472 
+	@${MKDIR} "${OBJECTDIR}/_ext/1472" 
 	@${RM} ${OBJECTDIR}/_ext/1472/V30_BTLDR.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1472/V30_BTLDR.o 
 	@${FIXDEPS} dummy.d -e "W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.ERR" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  $(ASM_OPTIONS)   \"W:/_fw/fw_projects/V30_BTLDR/V30_BTLDR.X/../V30_BTLDR.asm\" 

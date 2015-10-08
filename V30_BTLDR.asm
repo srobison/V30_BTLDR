@@ -158,21 +158,15 @@ BootloaderBreakCheck:
 ;    btfss   RXPORT, RXPIN           ; B0 BREAK found, wait for RXD to go IDLE
 ;    goto    $-1
 ;#endif
-#ifdef V04_HW
+
     btfsc   BTN1PORT, BTN1PIN           ; B0
-#else
-    btfss   BTN1PORT, BTN1PIN           ; B0
-#endif
     goto    AppVector               ; no BREAK state, attempt to start application
 WaitBootloaderBreakCheck:
 ;    clrwdt                         ; let the watchdog timer expire here if user ends up here inadvertently -> we have to catch bootloader within 2/8? seconds of reset
     bsf     LEDPORT, LEDPIN
     bcf     LIGHTPORT, LIGHTPIN
-#ifdef V04_HW
+
     btfss   BTN1PORT, BTN1PIN           ; B0 BREAK found, wait for RXD to go IDLE
-#else
-    btfsc   BTN1PORT, BTN1PIN           ; B0 BREAK found, wait for RXD to go IDLE
-#endif
 ;    goto    $-1
     goto    WaitBootloaderBreakCheck
 ;#else ; BOOTLOADER_ADDRESS == 0 ****************************************************************
@@ -539,11 +533,8 @@ WaitForRiseLoop:                    ; B0
     return                          ; abort
 #endif
 
-#ifdef V04_HW
+
     btfss   BTN0PORT, BTN0PIN       ; quit bootloader if btn1 pressed
-#else
-    btfsc   BTN0PORT, BTN0PIN       ; quit bootloader if btn1 pressed
-#endif
     goto    AppVector
 
 ;    clrwdt                          ;   XXX this let's the watchdog timer break from the bootloader if inadvertently entered by user
@@ -974,11 +965,8 @@ SendHostByte:                       ; B0/B1 -> B1
 ReadHostByte:                       ; Bx -> B0
     BXtoB0                          ; Bx -> B0
     clrwdt
-#ifdef V04_HW
+
     btfss   BTN0PORT, BTN0PIN       ; quit bootloader if btn1 pressed
-#else
-    btfsc   BTN0PORT, BTN0PIN       ; quit bootloader if btn1 pressed
-#endif
     goto    AppVector
 
     btfss   PIR1, RCIF              ; B0 Wait for data from RS232

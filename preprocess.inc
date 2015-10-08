@@ -110,37 +110,22 @@
         #endif
     #endif
 #endif
-#ifdef V04_HW
-    #ifndef BTN0PORT
-        #ifdef PORTB
-                ; BTN0 on pin RB1
-                #define BTN0PORT  PORTB
-                #define BTN0PIN   RB1
-        #endif
-    #endif
-    #ifndef BTN1PORT
-        #ifdef PORTB
-                ; BTN1 on pin RB2
-                #define BTN1PORT  PORTB
-                #define BTN1PIN   RB2
-        #endif
-    #endif
-#else
-    #ifndef BTN0PORT
-        #ifdef PORTD
-                ; BTN0 on pin RD4
-                #define BTN0PORT  PORTD
-                #define BTN0PIN   RD4
-        #endif
-    #endif
-    #ifndef BTN1PORT
-        #ifdef PORTD
-                ; BTN1 on pin RD5
-                #define BTN1PORT  PORTD
-                #define BTN1PIN   RD5
-        #endif
+
+#ifndef BTN0PORT
+    #ifdef PORTB
+            ; BTN0 on pin RB1
+            #define BTN0PORT  PORTB
+            #define BTN0PIN   RB1
     #endif
 #endif
+#ifndef BTN1PORT
+    #ifdef PORTB
+            ; BTN1 on pin RB2
+            #define BTN1PORT  PORTB
+            #define BTN1PIN   RB2
+    #endif
+#endif
+
 #ifndef LEDPORT
     #ifdef PORTD
             ; LED2 on pin RC2
@@ -174,39 +159,22 @@ DigitalInput macro
     #endif
 #endif
 
-#ifdef V04_HW
-    #ifdef ANSELB
-        #if BTN0PORT == PORTB		; RB1
-        banksel ANSELB
-        bcf	ANSELB, BTN0PIN	; set BTN0 pin to digital input (not analog)
+#ifdef ANSELB
+    #if BTN0PORT == PORTB		; RB1
+    banksel ANSELB
+    bcf	ANSELB, BTN0PIN	; set BTN0 pin to digital input (not analog)
 
-        BXtoB0
-        #endif
-
-        #if BTN1PORT == PORTB		; RB2
-        banksel ANSELB
-        bcf	ANSELB, BTN1PIN	; set BTN1 pin to digital input (not analog)
-
-        BXtoB0
-        #endif
+    BXtoB0
     #endif
-#else
-    #ifdef ANSELD
-        #if BTN0PORT == PORTD		; RD4
-        banksel ANSELD
-        bcf	ANSELD, BTN0PIN	; set BTN0 pin to digital input (not analog)
 
-        BXtoB0
-        #endif
+    #if BTN1PORT == PORTB		; RB2
+    banksel ANSELB
+    bcf	ANSELB, BTN1PIN	; set BTN1 pin to digital input (not analog)
 
-        #if BTN1PORT == PORTD		; RD5
-        banksel ANSELD
-        bcf	ANSELD, BTN1PIN	; set BTN1 pin to digital input (not analog)
-
-        BXtoB0
-        #endif
+    BXtoB0
     #endif
 #endif
+
     endm
 
 DigitalOutput macro
